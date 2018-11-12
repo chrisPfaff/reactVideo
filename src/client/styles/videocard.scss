@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css?family=Poor+Story");
+
+.videoCard {
+  background: #2ec4b6;
+  padding: 2px 16px;
+  text-align: center;
+  display: block;
+  margin: 5px;
+  min-height: 330px;
+  width: 350px;
+  border: 4px groove #e71d36;
+  box-shadow: 3px 1px 4px #2ec4b6;
+}
+.videoLink {
+  color: #e71d36;
+  text-decoration: none;
+  font-family: "Poor Story", cursive;
+  font-size: 24px;
+  text-shadow: 1px 1px black;
+}
+
+p {
+  border-radius: 5px;
+  font-family: "Poor Story", cursive;
+  background-color: black;
+  font-size: 16px;
+  color: #ff9f1c;
+}
