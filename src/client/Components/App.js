@@ -5,10 +5,11 @@ import React, { Component } from "react";
 import { render } from "react-dom";
 import Header from "./Header";
 import Container from "./Container";
+import SearchComponent from "./SearchComponent";
 
 import "../styles/index.scss";
 
-const youtubeHttp = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=javascript&type=video&videoDefinition=high&key=${
+const youtubeHttp = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=reactjs&type=video&videoDefinition=high&key=${
   process.env.API_KEY
 }`;
 
@@ -45,8 +46,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="mainContainer">
         <Header />
+        <SearchComponent />
         {this.renderField()}
       </div>
     );

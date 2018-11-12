@@ -14,7 +14,7 @@ class VideoCard extends React.Component {
           </a>
         </h3>
         <iframe
-          width="300"
+          width="350"
           height="250"
           src={`https://www.youtube.com/embed/${this.props.id}`}
         />

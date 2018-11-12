@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import VideoCard from "./VideoCard";
+import SearchComponent from "./SearchComponent";
 
 import "../styles/container.scss";
 
@@ -12,7 +13,6 @@ class Container extends Component {
   }
 
   render() {
-    console.log(this.props.data);
     const VideoArray = this.props.data.map(items => {
       return (
         <VideoCard
