@@ -6,6 +6,7 @@ import { render } from "react-dom";
 import Header from "./Header";
 import Container from "./Container";
 import SearchComponent from "./SearchComponent";
+import fetchData from "../../utils/index";
 
 import "../styles/index.scss";
 
