@@ -46,7 +46,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="mainContainer">
+      <div>
         <Header />
         <SearchComponent />
         {this.renderField()}

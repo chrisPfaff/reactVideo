@@ -1,14 +1,40 @@
 @import url("https://fonts.googleapis.com/css?family=Poor+Story");
 
 .header {
+  padding: 0 30px 0 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   color: #ff9f1c;
   border: 4px groove #2ec4b6;
   margin: 0 auto;
   width: 90vw;
   text-align: center;
   font-family: "Poor Story", cursive;
-  font-size: 25px;
+  font-size: 30px;
   background-color: #011627;
+}
+
+.loginButton {
+  box-shadow: 0px 5px #a56710;
+  background-color: #ff9f1c;
+  border-radius: 20px;
+  border: none;
+  color: #e71d36;
+  padding: 2px 20px;
+  text-align: center;
+  font-size: 20px;
+  display: inline-block;
+}
+
+.loginButton:hover {
+  box-shadow: 0px 3px #a56710;
+  top: 2px;
+}
+
+.loginButton:active {
+  box-shadow: none;
+  top: 3px;
 }
 
 .r {

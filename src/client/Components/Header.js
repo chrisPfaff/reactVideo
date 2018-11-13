@@ -8,11 +8,24 @@ class Header extends React.Component {
   render() {
     return (
       <div className="header">
-        <h1>
-          <em className="r">R</em>
-          eact <em className="v">V</em>
-          ideo
-        </h1>
+        <div>
+          <img
+            height="150px"
+            className="reactVideoHeaderImage"
+            src="src/client/img/reactVideo.png"
+            alt="reactVideo"
+          />
+        </div>
+        <div>
+          <h1>
+            <em className="r">R</em>
+            eact <em className="v">V</em>
+            ideo
+          </h1>
+        </div>
+        <div>
+          <button className="loginButton">login</button>
+        </div>
       </div>
     );
   }
