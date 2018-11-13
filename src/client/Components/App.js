@@ -5,9 +5,8 @@ import React, { Component } from "react";
 import { render } from "react-dom";
 import Header from "./Header";
 import Container from "./Container";
-import SearchComponent from "./SearchComponent";
-import fetchData from "../../utils/index";
-
+//import fetchData from "../../utils/index";
+import "../styles/searchcomponent.scss";
 import "../styles/index.scss";
 
 const youtubeHttp = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=reactjs&type=video&videoDefinition=high&key=${
@@ -16,11 +15,14 @@ const youtubeHttp = `https://www.googleapis.com/youtube/v3/search?part=snippet&m
 
 class App extends React.Component {
   constructor(props) {
-    super();
+    super(props);
     this.state = {
       data: [],
-      dataLogged: false
+      dataLogged: false,
+      query: ""
     };
+    this.handleClickSearch = this.handleClickSearch.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   fetchData() {
@@ -45,11 +47,31 @@ class App extends React.Component {
     }
   }
 
+  handleClickSearch(e) {
+    this.setState({ query: e.target.value });
+  }
+
+  handleSubmit(e) {
+    console.log(this.state.query);
+    e.preventDefault;
+  }
+
   render() {
     return (
       <div>
         <Header />
-        <SearchComponent />
+        <div className="searchBar">
+          <form onSubmit={this.handleSubmit}>
+            <label htmlFor="searchBar">Search For A Video</label>
+            <input
+              id="searchBar"
+              type="text"
+              value={this.state.query}
+              onChange={this.handleClickSearch}
+            />
+            <input id="submitButton" type="submit" value="Submit" />
+          </form>
+        </div>
         {this.renderField()}
       </div>
     );
