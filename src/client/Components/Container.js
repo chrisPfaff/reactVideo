@@ -12,9 +12,11 @@ class Container extends Component {
   }
 
   render() {
+    console.log(this.props);
     const VideoArray = this.props.data.map(items => {
       return (
         <VideoCard
+          key={items.id.videoId}
           id={items.id.videoId}
           video={items.snippet.thumbnails.medium.url}
           description={items.snippet.description}
