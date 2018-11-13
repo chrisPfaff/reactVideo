@@ -18,6 +18,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       data: [],
+      searchData: [],
       dataLogged: false,
       query: ""
     };
@@ -40,10 +41,10 @@ class App extends React.Component {
   }
 
   renderField() {
-    if (this.state.dataLogged === true) {
+    if (this.state.dataLogged === true && this.state.searchData.length > 1) {
+      return <Container data={this.state.searchData} />;
+    } else if (this.state.dataLogged === true) {
       return <Container data={this.state.data} />;
-    } else {
-      return <div>Loading</div>;
     }
   }
 
@@ -52,8 +53,17 @@ class App extends React.Component {
   }
 
   handleSubmit(e) {
-    console.log(this.state.query);
-    e.preventDefault;
+    let uri = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${
+      this.state.query
+    }&type=video&videoDefinition=high&key=${process.env.API_KEY}`;
+    fetch(uri)
+      .then(data => {
+        return data.json();
+      })
+      .then(resp => {
+        this.setState({ searchData: resp.items, dataLogged: true });
+      });
+    e.preventDefault();
   }
 
   render() {
