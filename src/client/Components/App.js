@@ -91,9 +91,3 @@ class App extends React.Component {
 export default App;
 
 render(<App />, document.getElementById("root"));
-
-// async componentDidMount() {
-//   await fetch("/api/pooper")
-//     .then(res => res.json())
-//     .then(user => this.setState({ username: user.username }));
-// }

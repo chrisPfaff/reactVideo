@@ -1,15 +1,15 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
-const outputDirectory = "dist";
 const Dotenv = require("dotenv-webpack");
 require("@babel/polyfill");
 
 module.exports = {
   entry: ["@babel/polyfill", "./src/client/index.js"],
   output: {
-    path: path.join(__dirname, outputDirectory),
-    filename: "bundle.js"
+    path: __dirname,
+    filename: "bundle.js",
+    publicPath: "/"
   },
   module: {
     rules: [
@@ -38,7 +38,6 @@ module.exports = {
     }
   },
   plugins: [
-    new CleanWebpackPlugin([outputDirectory]),
     new HtmlWebpackPlugin({
       template: "./public/index.html"
     }),
