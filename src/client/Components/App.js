@@ -52,7 +52,7 @@ class App extends React.Component {
     this.setState({ query: e.target.value });
   }
 
-  handleSubmit(e) {
+  handleSubmit = async e => {
     let uri = `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=${
       this.state.query
     }&type=video&videoDefinition=high&key=${process.env.API_KEY}`;
@@ -64,7 +64,7 @@ class App extends React.Component {
         this.setState({ searchData: resp.items, dataLogged: true });
       });
     e.preventDefault();
-  }
+  };
 
   render() {
     return (

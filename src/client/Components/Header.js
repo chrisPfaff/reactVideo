@@ -23,9 +23,7 @@ class Header extends React.Component {
             ideo
           </h1>
         </div>
-        <div>
-          <button className="loginButton">login</button>
-        </div>
+        <div />
       </div>
     );
   }

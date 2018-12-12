@@ -1,4 +1,4 @@
-module.exports = fetchData = uri => {
+module.exports = fetchData = async uri => {
   fetch(uri)
     .then(data => {
       return data.json();
