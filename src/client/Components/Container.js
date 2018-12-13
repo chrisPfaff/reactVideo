@@ -12,7 +12,6 @@ class Container extends Component {
   }
 
   render() {
-    console.log(this.props);
     const VideoArray = this.props.data.map(items => {
       return (
         <VideoCard
