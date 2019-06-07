@@ -2,7 +2,6 @@ const express = require("express");
 const path = require("path");
 const os = require("os");
 const bodyParser = require("body-parser");
-const promisify = require("es6-promisify");
 const mongoose = require("mongoose");
 const User = require("../models/User");
 
